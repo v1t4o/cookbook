@@ -1,0 +1,5 @@
+<h1>Livro de Receitas</h1>
+
+<% @recipes.each do |recipe| %>
+    <%= link_to recipe.name, recipe_path(recipe.id) %> - <%= link_to 'Editar', edit_recipe_path(recipe.id) %><br />
+<% end %>
