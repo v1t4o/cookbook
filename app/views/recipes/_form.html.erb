@@ -1,27 +1,30 @@
 <%= form_with model: @recipe do |f| %>
-  <div>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <b><%= f.label :name, 'Nome' %></b>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div>
-    <%= f.label :recipe_type_id, 'Tipo da receita' %>
-    <%= f.collection_select(:recipe_type_id, RecipeType.all, :id, :name) %>
+  <div class="form-group">
+    <b><%= f.label :recipe_type_id, 'Tipo da receita' %></b>
+    <%= f.collection_select(:recipe_type_id, RecipeType.all, :id, :name, {}, { class: "form-control" }) %>
   </div>
-  <div>
-    <%= f.label :cuisine, 'Culinária' %>
-    <%= f.text_field :cuisine %>
+  <div class="form-group">
+    <b><%= f.label :cuisine, 'Culinária' %></b>
+    <%= f.text_field :cuisine, class: "form-control" %>
   </div>
-  <div>
-    <%= f.label :ingredients, 'Ingredientes' %>
-    <%= f.text_area :ingredients %>
+  <div class="form-group">
+    <b><%= f.label :ingredients, 'Ingredientes' %></b>
+    <%= f.text_area :ingredients, class: "form-control" %>
   </div>
-  <div>
-    <%= f.label :cook_method, 'Método de preparo' %>
-    <%= f.text_area :cook_method %>
+  <div class="form-group">
+    <b><%= f.label :cook_method, 'Método de preparo' %></b>
+    <%= f.text_area :cook_method, class: "form-control" %>
   </div>
-  <div>
-    <%= f.label :cook_time, 'Tempo de preparo' %>
-    <%= f.number_field :cook_time %>
+  <div class="form-group">
+    <b><%= f.label :cook_time, 'Tempo de preparo' %></b>
+    <%= f.number_field :cook_time, class: "form-control" %>
   </div>
-  <%= f.submit 'Gravar' %>
+  <br>
+  <div>
+    <%= f.submit 'Gravar', class: "btn btn-success" %>
+  </div>
 <% end %>

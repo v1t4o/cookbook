@@ -1,7 +1,13 @@
-<%= form_with model: @recipe_type do |f| %>
-  <div>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
-  </div>
-  <%= f.submit 'Gravar' %>
-<% end %>
+
+<h2><strong>Cadastro de Tipo de Receita</strong></h2>
+<div style="width:20rem;">
+  <%= form_with model: @recipe_type do |f| %>
+    <div class="form-group">
+      <b><%= f.label :name, 'Nome' %></b>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <br>
+    <%= f.submit 'Gravar', class: "btn btn-success" %>
+  <% end %>
+</div>
+

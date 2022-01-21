@@ -1,0 +1,25 @@
+<h1>Rascunhos</h1>
+
+<div>
+    <table class="table table-striped" style="text-align:center">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Culinária</th>
+                <th colspan="2">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @recipes.each do |recipe| %>
+                <tr>
+                    <td><%= link_to recipe.name, recipe_path(recipe.id) %></td>
+                    <td><%= recipe.recipe_type.name %></td>
+                    <td><%= recipe.cuisine %></td>
+                    <td><%= link_to 'Editar', edit_recipe_path(recipe.id), class: "btn btn-warning" %></td>
+                    <td><%= button_to 'Publicar', publish_recipe_path(recipe.id), { method: 'patch', class: 'btn btn-success' } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    
+</div>

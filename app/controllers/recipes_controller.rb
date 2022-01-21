@@ -1,4 +1,8 @@
 class RecipesController < ApplicationController
+  def index
+    @recipes = Recipe.published
+  end
+  
   def new
     @recipe = Recipe.new
   end
@@ -29,5 +33,21 @@ class RecipesController < ApplicationController
     end
     flash.now['alert'] = 'Não foi possível alterar'
     render 'edit'
+  end
+
+  def publish
+    @recipe = Recipe.find(params[:id])
+    @recipe.published!
+    return redirect_to @recipe
+  end
+
+  def draft
+    @recipe = Recipe.find(params[:id])
+    @recipe.draft!
+    return redirect_to @recipe
+  end
+
+  def drafts
+    @recipes = Recipe.draft
   end
 end

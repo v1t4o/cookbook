@@ -1,5 +1,7 @@
-<h1>Livro de Receitas</h1>
-
-<% @recipes.each do |recipe| %>
-    <%= link_to recipe.name, recipe_path(recipe.id) %> - <%= link_to 'Editar', edit_recipe_path(recipe.id) %><br />
-<% end %>
+<div>
+  <br>
+  <br>
+  <h1>Olá, seja bem-vindo ao <i class="fas fa-cookie-bite"></i>CookBook</h1>
+  <br><br>
+  <h2>Você tem o total de <%= @recipes %> receitas cadastradas.</h2> 
+</div>
